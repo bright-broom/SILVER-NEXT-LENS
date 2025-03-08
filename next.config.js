@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // 静的エクスポート (SSG) を有効化
+  output: "export",
   eslint: {
-    ignoreDuringBuilds: true, // ビルド時の ESLint エラーを無視
+    ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // 静的エクスポート時に Next.js の画像最適化を無効化
+    unoptimized: true,
   },
   experimental: {
-    appDocumentPreloading: true, // 代わりにサポートされているオプションを指定
+    appDocumentPreloading: true, // サポートされているオプションに変更
   },
 }
 
