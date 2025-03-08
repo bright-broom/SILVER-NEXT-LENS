@@ -1,28 +1,68 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // 最新の ECMAScript 機能を活用するため "esnext" を指定
+    "target": "esnext",
+    
+    // 利用するライブラリを指定 (ブラウザ環境 + 最新の ES 機能)
     "lib": ["dom", "dom.iterable", "esnext"],
+
+    // JavaScript ファイルも TypeScript の対象に含める
     "allowJs": true,
+
+    // 型定義のチェックをスキップ（パフォーマンス向上）
     "skipLibCheck": true,
+
+    // 厳格な型チェックを有効化（型安全性の向上）
     "strict": true,
+
+    // コンパイル時の出力を行わない（Next.js は Babel で処理）
     "noEmit": true,
+
+    // ES モジュールの互換性を有効化
     "esModuleInterop": true,
+
+    // モジュールの管理方法を指定
     "module": "esnext",
-    "moduleResolution": "bundler",
+    
+    // Node.js のモジュール解決方式を使用（互換性を高める）
+    "moduleResolution": "node",
+
+    // JSON ファイルをインポート可能にする
     "resolveJsonModule": true,
+
+    // 各モジュールを独立してコンパイル（Next.js の要件）
     "isolatedModules": true,
-    "jsx": "preserve",
+
+    // JSX の処理方式を "react-jsx" に（Next.js の App Router に最適）
+    "jsx": "react-jsx",
+
+    // 増分コンパイルを有効化（コンパイル速度を向上）
     "incremental": true,
+
+    // ファイル名の大文字・小文字の不一致を防ぐ
     "forceConsistentCasingInFileNames": true,
+
+    // Next.js プラグインを適用（型サポート向上）
     "plugins": [
       {
         "name": "next"
       }
     ],
+
+    // エイリアスの設定（`@/` をプロジェクトのルートにマッピング）
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+
+  // TypeScript の解析対象のファイル
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+
+  // 除外するファイル
   "exclude": ["node_modules"]
 }
