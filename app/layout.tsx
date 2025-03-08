@@ -5,7 +5,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
-import "@/styles/globals.css"
+import "./globals.css"
 
 // =============================
 // メタデータ設定
