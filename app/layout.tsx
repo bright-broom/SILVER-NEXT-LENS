@@ -2,7 +2,6 @@
 // RootLayout.tsx
 // アプリ全体のレイアウトを管理するコンポーネント
 // =============================
-
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
