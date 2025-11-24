@@ -2,6 +2,7 @@
 
 import React from "react"
 import { HeroVideoDialog } from "./hero-video-dialog"
+import { VIDEO_ASSETS } from "@/lib/assets"
 
 const animationStyles = [
   "from-bottom",
@@ -37,8 +38,8 @@ export function HeroVideoDialogDemo() {
       
       <div className="w-full max-w-3xl mx-auto">
         <HeroVideoDialog
-          videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          thumbnailSrc="/images/drone.webp"
+          videoSrc={VIDEO_ASSETS.demo.youtubeUrl}
+          thumbnailSrc={VIDEO_ASSETS.demo.thumbnail}
           thumbnailAlt="Demo video thumbnail"
           animationStyle={selectedAnimation}
         />

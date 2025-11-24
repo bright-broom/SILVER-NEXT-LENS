@@ -18,55 +18,114 @@
 
 @layer base {
   :root {
-    --section-gradient-1: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    --section-gradient-2: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+    /* 空と自然をイメージした洗練されたグラデーション */
+    --section-gradient-1: linear-gradient(
+      135deg,
+      #f0f9ff 0%,
+      #e0f2fe 50%,
+      #f0f9ff 100%
+    );
+    --section-gradient-2: linear-gradient(
+      135deg,
+      #f8fafc 0%,
+      #f1f5f9 50%,
+      #e2e8f0 100%
+    );
+    --section-gradient-sky: linear-gradient(
+      180deg,
+      #e0f2fe 0%,
+      #bae6fd 50%,
+      #7dd3fc 100%
+    );
+    --section-gradient-ocean: linear-gradient(
+      135deg,
+      #e0f2fe 0%,
+      #a5d8ff 50%,
+      #74c0fc 100%
+    );
+
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: linear-gradient(to bottom right, #ffffff, #f8f9fa);
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 210 100% 50%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* 空をイメージしたプライマリカラー（シアンブルー） */
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 98%;
+
+    /* 洗練されたセカンダリカラー */
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 210 40% 9%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 210 40% 9%;
+
+    /* アクセントカラー（空の色） */
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 98%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 50%;
-    --chart-1: 12 76% 61%;
+    --ring: 199 89% 48%;
+    --chart-1: 199 89% 48%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
   .dark {
-    --background: linear-gradient(to bottom right, #1a1b1e, #141517);
+    /* ダークモード用の洗練されたグラデーション */
+    --section-gradient-1: linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #1e293b 50%,
+      #334155 100%
+    );
+    --section-gradient-2: linear-gradient(
+      135deg,
+      #1e293b 0%,
+      #334155 50%,
+      #475569 100%
+    );
+    --section-gradient-sky: linear-gradient(
+      180deg,
+      #0c4a6e 0%,
+      #075985 50%,
+      #0369a1 100%
+    );
+    --section-gradient-ocean: linear-gradient(
+      135deg,
+      #0c4a6e 0%,
+      #075985 50%,
+      #0284c7 100%
+    );
+
+    --background: linear-gradient(to bottom right, #0f172a, #1e293b);
     --foreground: 0 0% 98%;
-    --card: linear-gradient(to bottom right, #1a1b1e, #141517);
+    --card: linear-gradient(to bottom right, #1e293b, #334155);
     --card-foreground: 0 0% 98%;
-    --popover: linear-gradient(to bottom right, #1a1b1e, #141517);
+    --popover: linear-gradient(to bottom right, #1e293b, #334155);
     --popover-foreground: 0 0% 98%;
-    --primary: 210 100% 50%;
+
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 14.9%;
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 210 40% 14.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 210 40% 14.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 210 100% 50%;
-    --chart-1: 220 70% 50%;
+    --ring: 199 89% 48%;
+    --chart-1: 199 89% 48%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
@@ -111,6 +170,12 @@
   .section-gradient-2 {
     background: var(--section-gradient-2);
   }
+  .section-gradient-sky {
+    background: var(--section-gradient-sky);
+  }
+  .section-gradient-ocean {
+    background: var(--section-gradient-ocean);
+  }
   .section-base {
     @apply relative w-full overflow-hidden;
   }
@@ -119,35 +184,58 @@
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1400px;
   }
 
   /* セクション間のスペーシング */
   .section-spacing {
-    @apply py-16 sm:py-20 md:py-24 lg:py-32;
+    @apply py-20 sm:py-24 md:py-32 lg:py-40;
   }
 
   /* レスポンシブタイポグラフィ */
   .responsive-heading {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
   }
 
   .responsive-text {
-    @apply text-base sm:text-lg md:text-xl;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
   }
 
   /* グリッドレイアウトの改善 */
   .grid-responsive {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
 
-  /* カードのホバーエフェクト */
+  /* カードのホバーエフェクト（より洗練された） */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-2xl hover:-translate-y-2;
+    @apply hover:scale-[1.02];
   }
-}
 
-.dark {
-  --section-gradient-1: linear-gradient(135deg, #1a1b1e 0%, #141517 100%);
-  --section-gradient-2: linear-gradient(135deg, #141517 0%, #0f1012 100%);
+  /* グラスモーフィズム効果 */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-slate-900/70;
+    @apply border border-white/20 dark:border-slate-700/20;
+    @apply shadow-xl;
+  }
+
+  /* グラデーションテキスト */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-500;
+  }
+
+  /* 美しい影 */
+  .elegant-shadow {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* パララックス効果用 */
+  .parallax-bg {
+    @apply absolute inset-0;
+    @apply bg-cover bg-center bg-no-repeat;
+    transform: scale(1.1);
+  }
 }

@@ -5,21 +5,24 @@ import SectionWrapper from './SectionWrapper';
 import SectionHeader from './SectionHeader';
 import { type TeamMember } from './types';
 import { team as teamContent } from '@/lib/content';
+import { TEAM_IMAGES } from '@/lib/assets';
 
 const teamMembers: TeamMember[] = teamContent.members.map((member, index) => ({
   ...member,
-  src: index === 0 ? '/images/ginji2.webp' : '/images/tomoya.webp',
+  src: index === 0 ? TEAM_IMAGES.ginji : TEAM_IMAGES.tomoya,
 }));
 
 export default function Team() {
   return (
-    <SectionWrapper>
+    <SectionWrapper padding="lg">
       <SectionHeader
         title={teamContent.title}
         description={teamContent.description}
       />
 
-      <AnimatedTestimonials testimonials={teamMembers} />
+      <div className="mt-12">
+        <AnimatedTestimonials testimonials={teamMembers} />
+      </div>
     </SectionWrapper>
   );
 }

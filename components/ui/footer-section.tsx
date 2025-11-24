@@ -15,15 +15,15 @@ import { footer as footerContent, newsletter as newsletterContent } from '@/lib/
 
 function Footer() {
   return (
-    <footer className="section-base section-gradient-1 relative border-t border-gray-200/50 text-gray-700 transition-colors duration-300">
-      <div className="container mx-auto py-12 md:py-16">
+    <footer className="section-base section-gradient-1 relative border-t border-slate-200/50 dark:border-slate-800/50 text-slate-700 dark:text-slate-300 transition-colors duration-300">
+      <div className="container mx-auto py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* お問い合わせ */}
           <div>
-            <h2 className="mb-4 text-xl md:text-2xl font-bold tracking-tight">
+            <h2 className="mb-6 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               {footerContent.sections.contact.title}
             </h2>
-            <p className="mb-6 text-sm md:text-base text-gray-500">
+            <p className="mb-8 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               {newsletterContent.description}
             </p>
             <SecureNewsletterForm />
@@ -31,15 +31,15 @@ function Footer() {
 
           {/* サービス一覧 */}
           <div>
-            <h3 className="mb-4 text-lg md:text-xl font-semibold">
+            <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.services.title}
             </h3>
-            <nav className="space-y-2 text-sm md:text-base">
+            <nav className="space-y-3 text-base md:text-lg">
               {SERVICES.map((service, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="block transition-colors hover:text-gray-900"
+                  className="block transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:translate-x-2"
                 >
                   {service}
                 </a>
@@ -49,29 +49,39 @@ function Footer() {
 
           {/* 会社情報 */}
           <div>
-            <h3 className="mb-4 text-lg md:text-xl font-semibold">
+            <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.company.title}
             </h3>
-            <address className="space-y-2 text-sm md:text-base not-italic">
+            <address className="space-y-3 text-base md:text-lg not-italic text-slate-600 dark:text-slate-400">
               <p>〒{COMPANY_INFO.postalCode}</p>
               <p>{COMPANY_INFO.address}</p>
               <p>{COMPANY_INFO.building}</p>
-              <p>TEL：{COMPANY_INFO.phone}</p>
-              <p>FAX：{COMPANY_INFO.fax}</p>
+              <p className="pt-2">
+                <span className="font-semibold text-slate-900 dark:text-slate-200">TEL：</span>
+                {COMPANY_INFO.phone}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-900 dark:text-slate-200">FAX：</span>
+                {COMPANY_INFO.fax}
+              </p>
             </address>
           </div>
 
           {/* SNS */}
           <div>
-            <h3 className="mb-4 text-lg md:text-xl font-semibold">
+            <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.social.title}
             </h3>
             <div className="flex space-x-4">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-100">
-                      <Facebook className="h-5 w-5 text-gray-700 hover:text-blue-600" />
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full w-12 h-12 hover:bg-cyan-500/10 dark:hover:bg-cyan-500/20 transition-all duration-300 hover:scale-110"
+                    >
+                      <Facebook className="h-6 w-6 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" />
                       <span className="sr-only">Facebook</span>
                     </Button>
                   </TooltipTrigger>
@@ -84,8 +94,12 @@ function Footer() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-100">
-                      <Twitter className="h-5 w-5 text-gray-700 hover:text-blue-400" />
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full w-12 h-12 hover:bg-cyan-500/10 dark:hover:bg-cyan-500/20 transition-all duration-300 hover:scale-110"
+                    >
+                      <Twitter className="h-6 w-6 text-slate-700 dark:text-slate-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors" />
                       <span className="sr-only">Twitter</span>
                     </Button>
                   </TooltipTrigger>
@@ -98,8 +112,12 @@ function Footer() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-100">
-                      <Instagram className="h-5 w-5 text-gray-700 hover:text-pink-500" />
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full w-12 h-12 hover:bg-cyan-500/10 dark:hover:bg-cyan-500/20 transition-all duration-300 hover:scale-110"
+                    >
+                      <Instagram className="h-6 w-6 text-slate-700 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors" />
                       <span className="sr-only">Instagram</span>
                     </Button>
                   </TooltipTrigger>
@@ -113,15 +131,21 @@ function Footer() {
         </div>
 
         {/* 著作権とリンク */}
-        <div className="mt-8 md:mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200/50 pt-6 md:pt-8 text-center md:flex-row">
-          <p className="text-xs md:text-sm text-gray-500">
+        <div className="mt-12 md:mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-200/50 dark:border-slate-800/50 pt-8 md:pt-10 text-center md:flex-row">
+          <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
             © {new Date().getFullYear()} {footerContent.copyright}
           </p>
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-            <a href="#" className="transition-colors hover:text-gray-900">
+          <nav className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm md:text-base">
+            <a
+              href="#"
+              className="transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:underline"
+            >
               {footerContent.links.privacy}
             </a>
-            <a href="#" className="transition-colors hover:text-gray-900">
+            <a
+              href="#"
+              className="transition-all duration-300 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:underline"
+            >
               {footerContent.links.terms}
             </a>
           </nav>

@@ -21,9 +21,9 @@ const gradientClasses = {
 
 const paddingClasses = {
   'none': '',
-  'sm': 'py-12 sm:py-16',
-  'md': 'py-16 sm:py-20 md:py-24',
-  'lg': 'py-20 sm:py-24 md:py-32 lg:py-40',
+  'sm': 'py-16 sm:py-20 md:py-24',
+  'md': 'py-20 sm:py-24 md:py-32 lg:py-40',
+  'lg': 'py-24 sm:py-32 md:py-40 lg:py-48',
 };
 
 const defaultVariants: Variants = {

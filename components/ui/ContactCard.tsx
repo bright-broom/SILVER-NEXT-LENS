@@ -2,6 +2,7 @@
 
 import { LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
@@ -30,13 +31,23 @@ export default function ContactCard({
 }: ContactCardProps) {
   return (
     <AnimatedCard delay={delay}>
-      <Card className={`h-full bg-white/50 dark:bg-black/50 hover:shadow-lg transition-shadow ${className || ''}`}>
-        <CardHeader>
-          <Icon className="w-12 h-12 text-primary mb-4" />
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
+      <Card className={`h-full glass-card border-0 group ${className || ''}`}>
+        <CardHeader className="pb-6">
+          <motion.div
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="mb-6 inline-flex p-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all duration-500"
+          >
+            <Icon className="w-14 h-14 text-cyan-600 dark:text-cyan-400" />
+          </motion.div>
+          <CardTitle className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
+            {title}
+          </CardTitle>
+          <CardDescription className="text-base text-slate-600 dark:text-slate-300">
+            {description}
+          </CardDescription>
         </CardHeader>
-        <CardContent>{children}</CardContent>
+        <CardContent className="pt-0">{children}</CardContent>
       </Card>
     </AnimatedCard>
   );

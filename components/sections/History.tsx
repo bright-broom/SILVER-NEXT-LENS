@@ -4,6 +4,7 @@ import { Timeline } from '@/components/ui/timeline';
 import Image from 'next/image';
 import SectionWrapper from './SectionWrapper';
 import { type HistoryItem } from './types';
+import { OTHER_IMAGES } from '@/lib/assets';
 
 const historyData: HistoryItem[] = [
   {
@@ -16,14 +17,14 @@ const historyData: HistoryItem[] = [
         </p>
         <div className="grid grid-cols-2 gap-4">
           <Image
-            src="/images/myhyogo.webp"
+            src={OTHER_IMAGES.myhyogo}
             alt="2023年の活動"
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
           />
           <Image
-            src="/images/movies/arino.webp"
+            src={OTHER_IMAGES.arino}
             alt="2023年の活動"
             width={500}
             height={500}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { NEWS_IMAGES } from "@/lib/assets";
 
 const newsData = [
   {
@@ -8,63 +9,63 @@ const newsData = [
     title: "アジア国際子ども映画祭 in 南あわじ",
     description: "南あわじの子どもたちと映画制作に携わりました。",
     link: "https://asianfilm.chu.jp/",
-    thumbnail: "/images/news1.webp",
+    thumbnail: NEWS_IMAGES.news1,
   },
   {
     date: "2023年11月19日",
     title: "南あわじ市総合防災訓練 ドローン中継訓練",
     description: "防災訓練でドローン中継を担当しました。",
     link: "https://youtube.com/live/K8Ngyeci2vo",
-    thumbnail: "/images/news2.webp",
+    thumbnail: NEWS_IMAGES.news2,
   },
   {
     date: "2023年10月19日",
     title: "日テレ「世界一受けたい授業」映像提供",
     description: "渦潮のドローン映像を提供しました。",
     link: "https://www.ntv.co.jp/sekaju/",
-    thumbnail: "/images/news3.webp",
+    thumbnail: NEWS_IMAGES.news3,
   },
   {
     date: "2023年7月4日",
     title: "テレビ朝日「マツコ＆有吉 かりそめ天国」映像提供",
     description: "番組に特別映像を提供しました。",
     link: "https://www.tv-asahi.co.jp/matsuari/",
-    thumbnail: "/images/news4.webp",
+    thumbnail: NEWS_IMAGES.news4,
   },
   {
     date: "2023年10月2日",
     title: "第16回アジア国際子ども映画祭 関西・四国ブロック大会",
     description: "湊地区公民館での映画祭に参加しました。",
     link: "https://www.city.minamiawaji.hyogo.jp/soshiki/jyouhou/r0506-shisei1.html",
-    thumbnail: "/images/news5.webp",
+    thumbnail: NEWS_IMAGES.news5,
   },
   {
     date: "2023年6月10日",
     title: "NO BORDERS PROJECT インド 帰国",
     description: "インドでの撮影プロジェクトを完了しました。",
     link: "https://unityspace.org/no-borders-project/",
-    thumbnail: "/images/news6.webp",
+    thumbnail: NEWS_IMAGES.news6,
   },
   {
     date: "2023年6月8日",
     title: "兵庫県 県民だより 撮影",
     description: "沼島の上立神岩をドローンで撮影しました。",
     link: null,
-    thumbnail: "/images/news7.webp",
+    thumbnail: NEWS_IMAGES.news7,
   },
   {
     date: "2023年5月8日",
     title: "兵庫テロワール旅 ポスターと冊子の撮影",
     description: "沼島の美しい風景を空撮しました。",
     link: null,
-    thumbnail: "/images/news8.webp",
+    thumbnail: NEWS_IMAGES.news8,
   },
   {
     date: "2023年1月31日",
     title: "NHK土曜ドラマ『探偵ロマンス』 空撮",
     description: "最終話の空撮を担当しました。",
     link: "https://www2.nhk.or.jp/archives/movies/?id=D0009051524_00000",
-    thumbnail: "/images/news9.webp",
+    thumbnail: NEWS_IMAGES.news9,
   },
 ];
 

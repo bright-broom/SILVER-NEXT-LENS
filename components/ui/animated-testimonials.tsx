@@ -43,8 +43,9 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
+  const randomRotateY = (index: number) => {
+    // インデックスベースの決定論的な値を生成（ハイドレーションエラーを防ぐ）
+    return ((index * 7 + 13) % 21) - 10;
   };
 
   return (
@@ -60,13 +61,13 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     translateZ: -100,
-                    rotate: randomRotateY(),
+                    rotate: randomRotateY(index),
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     translateZ: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : randomRotateY(index),
                     zIndex: isActive(index)
                       ? 999
                       : testimonials.length + 2 - index,
@@ -76,7 +77,7 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     translateZ: 100,
-                    rotate: randomRotateY(),
+                    rotate: randomRotateY(index),
                   }}
                   transition={{
                     duration: 0.4,
@@ -152,12 +153,16 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
+              aria-label="前のメンバー"
+              title="前のメンバー"
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
             >
               <ArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
+              aria-label="次のメンバー"
+              title="次のメンバー"
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
             >
               <ArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />

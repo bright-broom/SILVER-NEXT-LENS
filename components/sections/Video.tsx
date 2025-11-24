@@ -4,10 +4,15 @@ import { HeroVideoDialog } from '@/components/ui/hero-video-dialog';
 import SectionWrapper from './SectionWrapper';
 import SectionHeader from './SectionHeader';
 import { video as videoContent } from '@/lib/content';
+import { VIDEO_ASSETS } from '@/lib/assets';
 
 export default function Video() {
   return (
-    <SectionWrapper gradient="none" className="bg-background" contentClassName="max-w-4xl mx-auto">
+    <SectionWrapper
+      gradient="none"
+      className="section-gradient-sky"
+      contentClassName="max-w-5xl mx-auto"
+    >
       <SectionHeader
         title={
           <>
@@ -18,13 +23,15 @@ export default function Video() {
         }
       />
 
-      <div className="space-y-12">
-        <HeroVideoDialog
-          animationStyle="from-center"
-          videoSrc="https://youtu.be/h5RZmQVUu_o?si=oU32s78GNY41N389"
-          thumbnailSrc="/images/movies/arino.webp"
-          thumbnailAlt={videoContent.thumbnailAlt}
-        />
+      <div className="space-y-16">
+        <div className="elegant-shadow rounded-3xl overflow-hidden">
+          <HeroVideoDialog
+            animationStyle="from-center"
+            videoSrc={VIDEO_ASSETS.main.youtubeUrl}
+            thumbnailSrc={VIDEO_ASSETS.main.thumbnail}
+            thumbnailAlt={videoContent.thumbnailAlt}
+          />
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -70,16 +70,18 @@ export default function SecureContactForm() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{contactContent.title}</CardTitle>
-        <CardDescription>
+    <Card className="glass-card border-0 shadow-2xl">
+      <CardHeader className="pb-8">
+        <CardTitle className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent">
+          {contactContent.title}
+        </CardTitle>
+        <CardDescription className="text-lg text-slate-600 dark:text-slate-300">
           {contactContent.description}。内容を確認後、ご連絡いたします。
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
               control={form.control}
               name="name"

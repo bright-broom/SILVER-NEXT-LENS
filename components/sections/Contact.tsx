@@ -16,7 +16,7 @@ export default function Contact() {
         description={contactContent.description}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-12 md:mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto mb-16 md:mb-20">
         <ContactCard
           icon={Phone}
           title={contactContent.cards.phone.title}
@@ -53,7 +53,7 @@ export default function Contact() {
         </ContactCard>
       </div>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto mt-8">
         <SecureContactForm />
       </div>
     </SectionWrapper>
