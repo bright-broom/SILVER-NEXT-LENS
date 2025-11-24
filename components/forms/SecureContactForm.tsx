@@ -17,6 +17,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { COMPANY_INFO } from '@/lib/constants';
 
 export default function SecureContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -124,7 +125,7 @@ export default function SecureContactForm() {
                   <FormControl>
                     <Input
                       type="tel"
-                      placeholder="0799-45-2377"
+                      placeholder={COMPANY_INFO.phone}
                       {...field}
                       autoComplete="tel"
                     />

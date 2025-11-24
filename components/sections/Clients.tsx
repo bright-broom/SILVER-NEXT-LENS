@@ -1,9 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SectionWrapper from './SectionWrapper';
 import SectionHeader from './SectionHeader';
+import AnimatedCard from '@/components/ui/AnimatedCard';
 import { type Client } from './types';
 
 const clients: Client[] = [
@@ -38,12 +38,9 @@ export default function Clients() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {clients.map((client, index) => (
-          <motion.div
+          <AnimatedCard
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-            viewport={{ once: true }}
+            delay={index * 0.05}
             className="flex items-center justify-center p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow transform hover:scale-105 bg-white/50 dark:bg-black/50"
           >
             <Image
@@ -53,7 +50,7 @@ export default function Clients() {
               height={60}
               className="object-contain"
             />
-          </motion.div>
+          </AnimatedCard>
         ))}
       </div>
     </SectionWrapper>

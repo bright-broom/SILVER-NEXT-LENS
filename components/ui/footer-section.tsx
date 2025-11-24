@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/tooltip';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 import SecureNewsletterForm from '@/components/forms/SecureNewsletterForm';
+import { COMPANY_INFO, SERVICES, SOCIAL_LINKS } from '@/lib/constants';
 
 function Footer() {
   return (
@@ -29,12 +30,15 @@ function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">サービス</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-gray-900">プロモーション映像制作</a>
-              <a href="#" className="block transition-colors hover:text-gray-900">企業・ブランドムービー</a>
-              <a href="#" className="block transition-colors hover:text-gray-900">個人向け映像制作</a>
-              <a href="#" className="block transition-colors hover:text-gray-900">ドローン空撮</a>
-              <a href="#" className="block transition-colors hover:text-gray-900">テレビ・メディア映像提供</a>
-              <a href="#" className="block transition-colors hover:text-gray-900">映像コンサルティング</a>
+              {SERVICES.map((service, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="block transition-colors hover:text-gray-900"
+                >
+                  {service}
+                </a>
+              ))}
             </nav>
           </div>
 
@@ -42,11 +46,11 @@ function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">会社情報</h3>
             <address className="space-y-2 text-sm not-italic">
-              <p>〒656-0122</p>
-              <p>南あわじ市広田広田365-2</p>
-              <p>山岡オフィスビル3F</p>
-              <p>TEL：0799-45-2377</p>
-              <p>FAX：0799-45-2378</p>
+              <p>〒{COMPANY_INFO.postalCode}</p>
+              <p>{COMPANY_INFO.address}</p>
+              <p>{COMPANY_INFO.building}</p>
+              <p>TEL：{COMPANY_INFO.phone}</p>
+              <p>FAX：{COMPANY_INFO.fax}</p>
             </address>
           </div>
 
