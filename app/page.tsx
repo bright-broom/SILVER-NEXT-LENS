@@ -1,37 +1,58 @@
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import Hero from '@/components/sections/Hero';
-import Concept from '@/components/sections/Concept';
-import News from '@/components/sections/News';
-import Services from '@/components/sections/Services';
-import Video from '@/components/sections/Video';
-import Movies from '@/components/sections/Movies';
-import About from '@/components/sections/About';
-import Team from '@/components/sections/Team';
-import History from '@/components/sections/History';
-import Clients from '@/components/sections/Clients';
-import Contact from '@/components/sections/Contact';
-import Footer from '@/components/sections/Footer';
 
-const sections = [
-  Hero,
-  Concept,
-  Services,
-  Video,
-  Movies,
-  Team,
-  History,
-  About,
-  Clients,
-  News,
-  Contact,
-  Footer,
-];
+const Concept = dynamic(() => import('@/components/sections/Concept'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Services = dynamic(() => import('@/components/sections/Services'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Video = dynamic(() => import('@/components/sections/Video'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Movies = dynamic(() => import('@/components/sections/Movies'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Team = dynamic(() => import('@/components/sections/Team'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const History = dynamic(() => import('@/components/sections/History'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const About = dynamic(() => import('@/components/sections/About'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Clients = dynamic(() => import('@/components/sections/Clients'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const News = dynamic(() => import('@/components/sections/News'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Contact = dynamic(() => import('@/components/sections/Contact'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Footer = dynamic(() => import('@/components/sections/Footer'), {
+  loading: () => <div className="min-h-[200px]" />,
+});
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden antialiased">
-      {sections.map((Section, index) => (
-        <Section key={index} />
-      ))}
+      <Hero />
+      <Suspense fallback={<div className="min-h-[400px]" />}>
+        <Concept />
+        <Services />
+        <Video />
+        <Movies />
+        <Team />
+        <History />
+        <About />
+        <Clients />
+        <News />
+        <Contact />
+        <Footer />
+      </Suspense>
     </main>
   );
 }

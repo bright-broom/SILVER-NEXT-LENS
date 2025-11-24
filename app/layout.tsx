@@ -23,6 +23,11 @@ const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => (
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={getFontClass()} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://player.vimeo.com" />
+      </head>
       <body className="font-sans" suppressHydrationWarning>
         <CustomThemeProvider>{children}</CustomThemeProvider>
       </body>

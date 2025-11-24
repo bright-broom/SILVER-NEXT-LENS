@@ -1,5 +1,6 @@
 'use client';
 
+import { memo, useMemo } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
@@ -31,7 +32,7 @@ const defaultVariants: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function SectionWrapper({
+function SectionWrapper({
   children,
   className,
   contentClassName,
@@ -39,21 +40,21 @@ export default function SectionWrapper({
   padding = 'md',
   animationDelay = 0,
 }: SectionWrapperProps) {
+  const sectionClassName = useMemo(
+    () => cn('section-base', gradientClasses[gradient], paddingClasses[padding], className),
+    [gradient, padding, className]
+  );
+
+  const transition = useMemo(() => ({ duration: 0.8, delay: animationDelay }), [animationDelay]);
+
   return (
-    <section
-      className={cn(
-        'section-base',
-        gradientClasses[gradient],
-        paddingClasses[padding],
-        className
-      )}
-    >
+    <section className={sectionClassName}>
       <div className="container mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, delay: animationDelay }}
+          transition={transition}
           variants={defaultVariants}
           className={cn(contentClassName)}
         >
@@ -63,4 +64,6 @@ export default function SectionWrapper({
     </section>
   );
 }
+
+export default memo(SectionWrapper);
 

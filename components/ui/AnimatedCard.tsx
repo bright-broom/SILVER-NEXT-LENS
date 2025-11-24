@@ -1,5 +1,6 @@
 'use client';
 
+import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
@@ -26,23 +27,28 @@ const animationVariants = {
   },
 };
 
-export default function AnimatedCard({
+function AnimatedCard({
   children,
   delay = 0,
   className,
   animationType = 'fadeUp',
 }: AnimatedCardProps) {
+  const variants = useMemo(() => animationVariants[animationType], [animationType]);
+  const transition = useMemo(() => ({ duration: 0.5, delay }), [delay]);
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      variants={animationVariants[animationType]}
+      transition={transition}
+      variants={variants}
       className={cn(className)}
     >
       {children}
     </motion.div>
   );
 }
+
+export default memo(AnimatedCard);
 

@@ -22,6 +22,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
           <Image
             src={OTHER_IMAGES.arino}
@@ -29,6 +31,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
         </div>
       </div>
@@ -53,6 +57,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
           <Image
             src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=3540&auto=format&fit=crop"
@@ -60,6 +66,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
         </div>
       </div>
@@ -83,6 +91,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
           <Image
             src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=3540&auto=format&fit=crop"
@@ -90,6 +100,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
         </div>
       </div>
@@ -110,6 +122,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
           <Image
             src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=3540&auto=format&fit=crop"
@@ -117,6 +131,8 @@ const historyData: HistoryItem[] = [
             width={500}
             height={500}
             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
         </div>
       </div>

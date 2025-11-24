@@ -100,6 +100,8 @@ export default function NewsSection() {
                   width={400}
                   height={250}
                   className="rounded-md object-cover w-full h-52"
+                  loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <h3 className="text-xl font-semibold tracking-tight">{news.title}</h3>
                 <p className="text-sm text-gray-500">{news.date}</p>
