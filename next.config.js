@@ -24,9 +24,6 @@ const nextConfig = {
   experimental: {
     appDocumentPreloading: true,
   },
-  // 注意: 静的エクスポート（output: "export"）ではheadersは使用できません
-  // セキュリティヘッダーはホスティングプロバイダー（Vercel、Netlifyなど）で設定するか、
-  // またはoutput: "export"を削除してサーバーサイドで設定してください
 };
 
 module.exports = nextConfig;

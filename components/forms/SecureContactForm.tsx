@@ -40,23 +40,14 @@ export default function SecureContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // 入力値をサニタイズ
       const sanitizedData = {
         name: sanitizeUserInput(data.name),
-        email: data.email, // メールアドレスは既に検証済み
+        email: data.email,
         phone: data.phone ? sanitizeUserInput(data.phone) : undefined,
         subject: sanitizeUserInput(data.subject),
         message: sanitizeUserInput(data.message),
       };
 
-      // ここでAPIエンドポイントに送信
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(sanitizedData),
-      // });
-
-      // デモ用の遅延
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setSubmitStatus('success');

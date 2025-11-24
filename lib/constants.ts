@@ -1,11 +1,3 @@
-/**
- * アプリケーション全体で使用する定数
- * 重複を避けるため、すべての定数はここで管理
- */
-
-/**
- * 会社情報
- */
 export const COMPANY_INFO = {
   name: 'SilverNextLens',
   company: '株式会社フィールドコム映像制作事業部',
@@ -15,7 +7,7 @@ export const COMPANY_INFO = {
   fullAddress: '〒656-0122 南あわじ市広田広田365-2 山岡オフィスビル3F',
   phone: '0799-45-2377',
   fax: '0799-45-2378',
-  email: 'info@silvernextlens.com', // 必要に応じて更新
+  email: 'info@silvernextlens.com',
   businessHours: '平日 9:00-18:00',
   established: {
     company: '1995年9月 (株)フィールドコム',
@@ -35,9 +27,6 @@ export const COMPANY_INFO = {
   ],
 } as const;
 
-/**
- * サービス一覧
- */
 export const SERVICES = [
   'プロモーション映像制作',
   '企業・ブランドムービー',
@@ -47,9 +36,6 @@ export const SERVICES = [
   '映像コンサルティング',
 ] as const;
 
-/**
- * SNSリンク（必要に応じて更新）
- */
 export const SOCIAL_LINKS = {
   facebook: '#',
   twitter: '#',

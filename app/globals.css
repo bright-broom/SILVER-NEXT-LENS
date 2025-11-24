@@ -2,23 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 @layer base {
   :root {
-    /* 超洗練されたグラデーション - 空と雲をイメージ */
     --section-gradient-1: linear-gradient(
       135deg,
       #f8fafc 0%,
@@ -68,19 +53,12 @@
     --card-foreground: 222.2 47.4% 11.2%;
     --popover: linear-gradient(to bottom right, #ffffff, #f8fafc);
     --popover-foreground: 222.2 47.4% 11.2%;
-
-    /* 洗練されたプライマリカラー - 深いシアン */
     --primary: 195 100% 47%;
     --primary-foreground: 0 0% 100%;
-
-    /* 洗練されたセカンダリカラー */
     --secondary: 210 40% 98%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    /* アクセントカラー - ビビッドなシアン */
     --accent: 195 100% 47%;
     --accent-foreground: 0 0% 100%;
 
@@ -97,7 +75,6 @@
     --radius: 1rem;
   }
   .dark {
-    /* 超洗練されたダークグラデーション */
     --section-gradient-1: linear-gradient(
       135deg,
       #0f172a 0%,
@@ -222,19 +199,16 @@
     @apply relative w-full overflow-hidden;
   }
 
-  /* 超洗練されたコンテナ */
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
     width: 100%;
     max-width: 1600px;
   }
 
-  /* セクション間のスペーシング */
   .section-spacing {
     @apply py-24 sm:py-32 md:py-40 lg:py-48;
   }
 
-  /* 超洗練されたレスポンシブタイポグラフィ */
   .responsive-heading {
     @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter;
     @apply bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-100 dark:via-slate-200 dark:to-slate-100;
@@ -247,12 +221,10 @@
     @apply leading-relaxed;
   }
 
-  /* 超洗練されたグリッドレイアウト */
   .grid-responsive {
     @apply grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
 
-  /* 超洗練されたカードのホバーエフェクト */
   .card-hover {
     @apply transition-all duration-700;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -260,7 +232,6 @@
     @apply hover:brightness-105;
   }
 
-  /* 超洗練されたグラスモーフィズム効果 */
   .glass-card {
     @apply backdrop-blur-2xl bg-white/80 dark:bg-slate-900/80;
     @apply border border-white/30 dark:border-slate-700/30;
@@ -279,7 +250,6 @@
     @apply shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)];
   }
 
-  /* 超洗練されたグラデーションテキスト */
   .gradient-text {
     @apply bg-clip-text text-transparent;
     @apply bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-400;
@@ -298,7 +268,6 @@
     }
   }
 
-  /* 超洗練された影 */
   .elegant-shadow {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
       0 10px 20px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -309,14 +278,12 @@
       0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
 
-  /* パララックス効果用 */
   .parallax-bg {
     @apply absolute inset-0;
     @apply bg-cover bg-center bg-no-repeat;
     transform: scale(1.1);
   }
 
-  /* 光るエフェクト */
   .glow-effect {
     @apply relative;
   }
@@ -333,12 +300,10 @@
     @apply opacity-100;
   }
 
-  /* 滑らかなスクロール */
   .smooth-scroll {
     scroll-behavior: smooth;
   }
 
-  /* 高級感のあるボーダー */
   .premium-border {
     @apply border-2;
     @apply border-gradient-to-r from-cyan-500/50 via-blue-500/50 to-cyan-500/50;
@@ -348,7 +313,6 @@
     border: 2px solid transparent;
   }
 
-  /* アニメーション用のユーティリティ */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
   }

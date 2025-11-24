@@ -18,7 +18,6 @@ function Footer() {
     <footer className="section-base section-gradient-1 relative border-t border-slate-200/50 dark:border-slate-800/50 text-slate-700 dark:text-slate-300 transition-colors duration-300">
       <div className="container mx-auto py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {/* お問い合わせ */}
           <div>
             <h2 className="mb-6 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               {footerContent.sections.contact.title}
@@ -29,7 +28,6 @@ function Footer() {
             <SecureNewsletterForm />
           </div>
 
-          {/* サービス一覧 */}
           <div>
             <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.services.title}
@@ -47,7 +45,6 @@ function Footer() {
             </nav>
           </div>
 
-          {/* 会社情報 */}
           <div>
             <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.company.title}
@@ -67,7 +64,6 @@ function Footer() {
             </address>
           </div>
 
-          {/* SNS */}
           <div>
             <h3 className="mb-6 text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
               {footerContent.sections.social.title}
@@ -130,7 +126,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* 著作権とリンク */}
         <div className="mt-12 md:mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-200/50 dark:border-slate-800/50 pt-8 md:pt-10 text-center md:flex-row">
           <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
             © {new Date().getFullYear()} {footerContent.copyright}

@@ -44,7 +44,6 @@ export const AnimatedTestimonials = ({
   }, [autoplay]);
 
   const randomRotateY = (index: number) => {
-    // インデックスベースの決定論的な値を生成（ハイドレーションエラーを防ぐ）
     return ((index * 7 + 13) % 21) - 10;
   };
 

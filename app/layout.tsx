@@ -7,8 +7,6 @@ import { metadata as siteMetadata } from '@/lib/content';
 export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
-  // 注意: セキュリティヘッダーはホスティングプロバイダー（Vercel/Netlify）で設定
-  // public/vercel.json または public/_headers を参照
 };
 
 const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => (

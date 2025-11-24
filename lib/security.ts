@@ -1,11 +1,3 @@
-/**
- * セキュリティユーティリティ関数
- * XSS攻撃、インジェクション攻撃などを防ぐための関数群
- */
-
-/**
- * HTMLタグをエスケープしてXSS攻撃を防ぐ
- */
 export function escapeHtml(unsafe: string): string {
   return unsafe
     .replace(/&/g, '&amp;')
@@ -15,13 +7,9 @@ export function escapeHtml(unsafe: string): string {
     .replace(/'/g, '&#039;');
 }
 
-/**
- * URLをサニタイズして安全なURLか検証
- */
 export function sanitizeUrl(url: string): string | null {
   try {
     const parsed = new URL(url);
-    // 許可されたプロトコルのみ
     const allowedProtocols = ['http:', 'https:', 'mailto:', 'tel:'];
     if (!allowedProtocols.includes(parsed.protocol)) {
       return null;
@@ -32,25 +20,16 @@ export function sanitizeUrl(url: string): string | null {
   }
 }
 
-/**
- * メールアドレスの検証
- */
 export function validateEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email) && email.length <= 254;
 }
 
-/**
- * 電話番号の検証（日本の形式）
- */
 export function validatePhone(phone: string): boolean {
   const phoneRegex = /^[\d\-+()\s]+$/;
   return phoneRegex.test(phone) && phone.length <= 20;
 }
 
-/**
- * 入力文字列の長さを検証
- */
 export function validateLength(
   input: string,
   min: number,
@@ -59,9 +38,6 @@ export function validateLength(
   return input.length >= min && input.length <= max;
 }
 
-/**
- * SQLインジェクションやコマンドインジェクションを防ぐためのサニタイズ
- */
 export function sanitizeInput(input: string): string {
   return input
     .trim()
@@ -69,15 +45,11 @@ export function sanitizeInput(input: string): string {
     .replace(/\s+/g, ' ');
 }
 
-/**
- * CSRFトークンの生成（簡易版）
- */
 export function generateCsrfToken(): string {
   const array = new Uint8Array(32);
   if (typeof window !== 'undefined' && window.crypto) {
     window.crypto.getRandomValues(array);
   } else {
-    // フォールバック（本番環境では推奨されない）
     for (let i = 0; i < array.length; i++) {
       array[i] = Math.floor(Math.random() * 256);
     }
@@ -87,9 +59,6 @@ export function generateCsrfToken(): string {
   );
 }
 
-/**
- * 危険な文字列パターンを検出
- */
 export function containsDangerousPatterns(input: string): boolean {
   const dangerousPatterns = [
     /<script/i,
@@ -102,9 +71,6 @@ export function containsDangerousPatterns(input: string): boolean {
   return dangerousPatterns.some((pattern) => pattern.test(input));
 }
 
-/**
- * 入力値を安全にサニタイズ（複合的な検証）
- */
 export function sanitizeUserInput(input: string): string {
   if (containsDangerousPatterns(input)) {
     throw new Error('危険な文字列が検出されました');
@@ -112,9 +78,6 @@ export function sanitizeUserInput(input: string): string {
   return escapeHtml(sanitizeInput(input));
 }
 
-/**
- * Content Security Policyのヘッダー値を生成
- */
 export function generateCSPHeader(): string {
   const isDev = process.env.NODE_ENV === 'development';
   

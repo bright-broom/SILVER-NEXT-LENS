@@ -1,28 +1,14 @@
-/**
- * テキストコンテンツの中央管理
- * プロジェクト全体で使用するテキストを一元管理
- */
-
-/**
- * メタデータ
- */
 export const metadata = {
   title: 'SILVER NEXT LENS',
   description: '映像・写真制作のプロフェッショナル集団',
 } as const;
 
-/**
- * ヒーローセクション
- */
 export const hero = {
   scrollIndicator: {
     ariaLabel: 'スクロール',
   },
 } as const;
 
-/**
- * コンセプトセクション
- */
 export const concept = {
   title: {
     line1: '心を揺さぶる、',
@@ -34,9 +20,6 @@ export const concept = {
   },
 } as const;
 
-/**
- * サービスセクション
- */
 export const services = {
   title: 'Service',
   description: '映像制作を通じて、あなたのビジョンを具現化します。',
@@ -68,9 +51,6 @@ export const services = {
   ],
 } as const;
 
-/**
- * ビデオセクション
- */
 export const video = {
   title: {
     line1: 'ありのまま、',
@@ -79,17 +59,11 @@ export const video = {
   thumbnailAlt: 'シルバーネクストレンズ 紹介映像',
 } as const;
 
-/**
- * 制作実績セクション
- */
 export const movies = {
   title: '制作実績',
   description: 'ドローン空撮・映像制作の作品集',
 } as const;
 
-/**
- * チームセクション
- */
 export const team = {
   title: 'Team',
   description: 'プロフェッショナルな映像制作チーム',
@@ -109,9 +83,6 @@ export const team = {
   ],
 } as const;
 
-/**
- * お問い合わせセクション
- */
 export const contact = {
   title: 'Contact',
   description: 'お気軽にご相談ください',
@@ -160,17 +131,11 @@ export const contact = {
   },
 } as const;
 
-/**
- * 主要取引先セクション
- */
 export const clients = {
   title: '主要取引先',
   description: '多くの企業・団体様にご信頼いただいています',
 } as const;
 
-/**
- * 会社概要セクション
- */
 export const about = {
   title: '会社概要',
   labels: {
@@ -184,9 +149,6 @@ export const about = {
   },
 } as const;
 
-/**
- * ニュースレター
- */
 export const newsletter = {
   title: 'お問い合わせ',
   description: '最新情報やお得な情報をメールでお届けします。',
@@ -196,9 +158,6 @@ export const newsletter = {
   error: '登録に失敗しました',
 } as const;
 
-/**
- * フッター
- */
 export const footer = {
   sections: {
     contact: {
@@ -226,9 +185,6 @@ export const footer = {
   },
 } as const;
 
-/**
- * 共通テキスト
- */
 export const common = {
   loading: '読み込み中...',
   error: 'エラーが発生しました',

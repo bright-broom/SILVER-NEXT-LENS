@@ -1,19 +1,8 @@
-/**
- * アプリケーション全体で使用する画像と動画のアセット管理
- * すべてのアセットパスはここで一元管理
- */
-
-/**
- * 画像のベースパス
- */
 const IMAGE_BASE_PATH = '/images';
 const LOGO_BASE_PATH = `${IMAGE_BASE_PATH}/logo`;
 const MOVIES_BASE_PATH = `${IMAGE_BASE_PATH}/movies`;
 const NEWS_BASE_PATH = `${IMAGE_BASE_PATH}`;
 
-/**
- * ヒーローセクション
- */
 export const HERO_ASSETS = {
   backgroundVideo: {
     vimeoId: '667542636',
@@ -21,17 +10,11 @@ export const HERO_ASSETS = {
   },
 } as const;
 
-/**
- * チームメンバー画像
- */
 export const TEAM_IMAGES = {
   ginji: `${IMAGE_BASE_PATH}/ginji2.webp`,
   tomoya: `${IMAGE_BASE_PATH}/tomoya.webp`,
 } as const;
 
-/**
- * クライアントロゴ
- */
 export const CLIENT_LOGOS: Array<{ name: string; logo: string }> = [
   { name: 'NHK', logo: `${LOGO_BASE_PATH}/NHK_logo.webp` },
   { name: '日本テレビ', logo: `${LOGO_BASE_PATH}/nittere.webp` },
@@ -54,9 +37,6 @@ export const CLIENT_LOGOS: Array<{ name: string; logo: string }> = [
   { name: 'パソナグループ', logo: `${LOGO_BASE_PATH}/pasona.webp` },
 ];
 
-/**
- * 制作実績画像
- */
 export const MOVIE_IMAGES = [
   `${MOVIES_BASE_PATH}/movie1.webp`,
   `${MOVIES_BASE_PATH}/movie2.webp`,
@@ -72,9 +52,6 @@ export const MOVIE_IMAGES = [
   `${MOVIES_BASE_PATH}/movie12.webp`,
 ] as const;
 
-/**
- * ビデオアセット
- */
 export const VIDEO_ASSETS = {
   main: {
     youtubeId: 'h5RZmQVUu_o',
@@ -87,9 +64,6 @@ export const VIDEO_ASSETS = {
   },
 } as const;
 
-/**
- * ニュース画像
- */
 export const NEWS_IMAGES = {
   news1: `${NEWS_BASE_PATH}/news1.webp`,
   news2: `${NEWS_BASE_PATH}/news2.webp`,
@@ -102,29 +76,16 @@ export const NEWS_IMAGES = {
   news9: `${NEWS_BASE_PATH}/news9.webp`,
 } as const;
 
-/**
- * その他の画像
- */
 export const OTHER_IMAGES = {
   myhyogo: `${IMAGE_BASE_PATH}/myhyogo.webp`,
   arino: `${MOVIES_BASE_PATH}/arino.webp`,
   drone: `${IMAGE_BASE_PATH}/drone.webp`,
 } as const;
 
-/**
- * 型定義
- */
 export type ClientLogo = (typeof CLIENT_LOGOS)[number];
 export type MovieImage = (typeof MOVIE_IMAGES)[number];
 export type NewsImage = (typeof NEWS_IMAGES)[keyof typeof NEWS_IMAGES];
 
-/**
- * ヘルパー関数
- */
-
-/**
- * Vimeoの埋め込みURLを生成
- */
 export function getVimeoEmbedUrl(videoId: string, options?: {
   autoplay?: boolean;
   loop?: boolean;
@@ -140,9 +101,6 @@ export function getVimeoEmbedUrl(videoId: string, options?: {
   return `https://player.vimeo.com/video/${videoId}${params.toString() ? `?${params.toString()}` : ''}`;
 }
 
-/**
- * YouTubeの埋め込みURLを生成
- */
 export function getYouTubeEmbedUrl(videoId: string, options?: {
   autoplay?: boolean;
   loop?: boolean;
@@ -156,9 +114,6 @@ export function getYouTubeEmbedUrl(videoId: string, options?: {
   return `https://www.youtube.com/embed/${videoId}${params.toString() ? `?${params.toString()}` : ''}`;
 }
 
-/**
- * YouTubeの短縮URLからIDを抽出
- */
 export function extractYouTubeId(url: string): string | null {
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,

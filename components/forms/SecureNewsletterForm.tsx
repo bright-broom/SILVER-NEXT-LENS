@@ -36,14 +36,6 @@ export default function SecureNewsletterForm({ className }: SecureNewsletterForm
     setSubmitStatus('idle');
 
     try {
-      // ここでAPIエンドポイントに送信
-      // const response = await fetch('/api/newsletter', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email: data.email }),
-      // });
-
-      // デモ用の遅延
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setSubmitStatus('success');

@@ -1,13 +1,6 @@
-/**
- * 入力検証スキーマ（Zodを使用）
- */
-
 import { z } from 'zod';
 import { validateEmail, validatePhone } from './security';
 
-/**
- * メールアドレス検証スキーマ
- */
 export const emailSchema = z
   .string()
   .min(1, 'メールアドレスを入力してください')
@@ -17,9 +10,6 @@ export const emailSchema = z
     message: '無効なメールアドレス形式です',
   });
 
-/**
- * 電話番号検証スキーマ
- */
 export const phoneSchema = z
   .string()
   .min(1, '電話番号を入力してください')
@@ -28,9 +18,6 @@ export const phoneSchema = z
     message: '有効な電話番号を入力してください',
   });
 
-/**
- * お問い合わせフォームスキーマ
- */
 export const contactFormSchema = z.object({
   name: z
     .string()
@@ -49,9 +36,6 @@ export const contactFormSchema = z.object({
     .max(5000, 'メッセージが長すぎます'),
 });
 
-/**
- * メール購読フォームスキーマ
- */
 export const newsletterSchema = z.object({
   email: emailSchema,
 });

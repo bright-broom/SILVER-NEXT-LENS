@@ -74,7 +74,6 @@ export default function NewsSection() {
     <section className="section-base section-gradient-1 w-full py-20 lg:py-40">
       <div className="container mx-auto px-4">
         <div className="flex flex-col gap-10">
-          {/* Header */}
           <div className="flex flex-col gap-4 items-center text-center">
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tighter">
               News
@@ -84,7 +83,6 @@ export default function NewsSection() {
             </p>
           </div>
 
-          {/* News Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsData.map((news, index) => (
               <div

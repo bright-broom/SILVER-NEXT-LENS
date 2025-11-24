@@ -8,7 +8,6 @@ import { HERO_ASSETS, getVimeoEmbedUrl } from '@/lib/assets';
 const VideoBackground = () => {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
-      {/* オーバーレイグラデーション */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10" />
       
       <iframe
@@ -31,7 +30,6 @@ const VideoBackground = () => {
         }}
       />
       
-      {/* 追加のビジュアルエフェクト */}
       <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 via-transparent to-transparent z-10" />
     </div>
   );
@@ -74,8 +72,6 @@ export default function Hero() {
     <section className="relative h-screen w-screen overflow-hidden">
       <VideoBackground />
       <ScrollIndicator />
-      
-      {/* 装飾的な要素 */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl z-0" />
     </section>
