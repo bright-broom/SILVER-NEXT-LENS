@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import SectionWrapper from './SectionWrapper';
+import SectionHeader from './SectionHeader';
+import { type Client } from './types';
 
-const clients = [
+const clients: Client[] = [
   { name: 'NHK', logo: '/images/logo/NHK_logo.webp' },
   { name: '日本テレビ', logo: '/images/logo/nittere.webp' },
   { name: 'TBSテレビ', logo: '/images/logo/tbs.webp' },
@@ -27,42 +30,32 @@ const clients = [
 
 export default function Clients() {
   return (
-    <section className="section-base section-gradient-1 py-24">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4">主要取引先</h2>
-          <p className="text-lg text-muted-foreground">
-            多くの企業・団体様にご信頼いただいています
-          </p>
-        </motion.div>
+    <SectionWrapper>
+      <SectionHeader
+        title="主要取引先"
+        description="多くの企業・団体様にご信頼いただいています"
+      />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {clients.map((client, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow transform hover:scale-105 bg-white/50 dark:bg-black/50"
-            >
-              <Image 
-                src={client.logo} 
-                alt={client.name} 
-                width={120} 
-                height={60} 
-                className="object-contain"
-              />
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {clients.map((client, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow transform hover:scale-105 bg-white/50 dark:bg-black/50"
+          >
+            <Image
+              src={client.logo}
+              alt={client.name}
+              width={120}
+              height={60}
+              className="object-contain"
+            />
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

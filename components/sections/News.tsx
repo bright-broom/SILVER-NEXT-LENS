@@ -1,11 +1,9 @@
-import Feature from "../ui/feature-section-with-grid";
+import Feature from '@/components/ui/feature-section-with-grid';
 
-function News() {
+export default function News() {
   return (
     <div className="w-full">
       <Feature />
     </div>
   );
 }
-
-export { News };

@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
-import { motion } from "framer-motion";
+'use client';
 
-export function Concept() {
+import { HeroHighlight, Highlight } from '@/components/ui/hero-highlight';
+import { motion } from 'framer-motion';
+
+export default function Concept() {
   return (
     <section id="concept" className="w-full">
       <HeroHighlight>
@@ -23,8 +23,8 @@ export function Concept() {
           className="text-center space-y-8 px-4"
         >
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white">
-          心を揺さぶる、<br />
-          <Highlight className="text-black dark:text-white">唯一無二の映像体験。</Highlight>
+            心を揺さぶる、<br />
+            <Highlight className="text-black dark:text-white">唯一無二の映像体験。</Highlight>
           </h2>
 
           <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">

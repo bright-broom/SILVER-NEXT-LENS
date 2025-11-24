@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "security:check": "npm audit --audit-level=moderate",
+    "security:fix": "npm audit fix",
+    "type-check": "tsc --noEmit",
+    "validate": "npm run type-check && npm run lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

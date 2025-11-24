@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion';
 import { Camera, Video, Briefcase, AirVent, Tv2, Lightbulb } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import SectionWrapper from './SectionWrapper';
+import SectionHeader from './SectionHeader';
+import { type Service } from './types';
 
-const services = [
+const services: Service[] = [
   {
     icon: Video,
     title: 'プロモーション映像制作',
@@ -21,7 +24,7 @@ const services = [
     description: '人生の特別な瞬間を映像に残し、感動を形にする映像制作。',
   },
   {
-    icon: AirVent, // Drone の代替アイコン
+    icon: AirVent,
     title: 'ドローン空撮',
     description: '圧倒的な視点で撮影する高品質なドローン空撮サービス。',
   },
@@ -39,43 +42,33 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="section-base section-gradient-1 py-24">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4">Service</h2>
-          <p className="text-lg text-muted-foreground">
-            映像制作を通じて、あなたのビジョンを具現化します。
-          </p>
-        </motion.div>
+    <SectionWrapper>
+      <SectionHeader
+        title="Service"
+        description="映像制作を通じて、あなたのビジョンを具現化します。"
+      />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="mb-4 text-primary">
-                    <service.icon size={32} />
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <Card className="h-full hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="mb-4 text-primary">
+                  <service.icon size={32} />
+                </div>
+                <CardTitle>{service.title}</CardTitle>
+                <CardDescription>{service.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

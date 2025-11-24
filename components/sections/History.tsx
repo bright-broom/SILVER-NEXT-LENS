@@ -2,8 +2,10 @@
 
 import { Timeline } from '@/components/ui/timeline';
 import Image from 'next/image';
+import SectionWrapper from './SectionWrapper';
+import { type HistoryItem } from './types';
 
-const historyData = [
+const historyData: HistoryItem[] = [
   {
     title: '2023',
     content: (
@@ -123,8 +125,8 @@ const historyData = [
 
 export default function History() {
   return (
-    <section className="section-base">
+    <SectionWrapper gradient="none">
       <Timeline data={historyData} />
-    </section>
+    </SectionWrapper>
   );
 }

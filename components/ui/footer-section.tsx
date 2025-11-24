@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Facebook, Instagram, Send, Twitter } from "lucide-react";
+} from '@/components/ui/tooltip';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
+import SecureNewsletterForm from '@/components/forms/SecureNewsletterForm';
 
 function Footer() {
   return (
@@ -22,21 +22,7 @@ function Footer() {
             <p className="mb-6 text-gray-500">
               最新情報やお得な情報をメールでお届けします。
             </p>
-            <form className="relative">
-              <Input
-                type="email"
-                placeholder="メールアドレスを入力"
-                className="pr-12 backdrop-blur-sm border-gray-300/50 bg-white/50 dark:bg-black/50"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-gray-800 text-white transition-transform hover:scale-105"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">登録</span>
-              </Button>
-            </form>
+            <SecureNewsletterForm />
           </div>
 
           {/* サービス一覧 */}

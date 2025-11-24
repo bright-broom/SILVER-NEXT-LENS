@@ -1,13 +1,9 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
-import styles from "./Hero.module.css"
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import styles from './Hero.module.css';
 
-// =============================
-// 動画背景コンポーネント
-// 全デバイス対応のフルスクリーン化
-// =============================
 const VideoBackground = () => {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -16,19 +12,19 @@ const VideoBackground = () => {
         src="https://player.vimeo.com/video/667542636?autoplay=1&loop=1&muted=1&background=1"
         className={`absolute inset-0 w-full h-full border-none ${styles.videoBackground}`}
         allow="autoplay; fullscreen"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
         style={{
-          objectFit: "cover",
-          width: "100%",
-          height: "100%",
+          objectFit: 'cover',
+          width: '100%',
+          height: '100%',
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-// =============================
-// スクロールインジケーターコンポーネント
-// =============================
 const ScrollIndicator = () => {
   return (
     <motion.div
@@ -39,17 +35,14 @@ const ScrollIndicator = () => {
     >
       <ChevronDown size={32} />
     </motion.div>
-  )
-}
+  );
+};
 
-// =============================
-// ヒーローセクションコンポーネント
-// =============================
 export default function Hero() {
   return (
     <section className="relative h-screen w-screen overflow-hidden">
       <VideoBackground />
       <ScrollIndicator />
     </section>
-  )
+  );
 }
