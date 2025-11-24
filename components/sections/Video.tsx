@@ -3,6 +3,7 @@
 import { HeroVideoDialog } from '@/components/ui/hero-video-dialog';
 import SectionWrapper from './SectionWrapper';
 import SectionHeader from './SectionHeader';
+import { video as videoContent } from '@/lib/content';
 
 export default function Video() {
   return (
@@ -10,8 +11,9 @@ export default function Video() {
       <SectionHeader
         title={
           <>
-            ありのまま、<br />
-            あわじしま。
+            {videoContent.title.line1}
+            <br />
+            {videoContent.title.line2}
           </>
         }
       />
@@ -21,7 +23,7 @@ export default function Video() {
           animationStyle="from-center"
           videoSrc="https://youtu.be/h5RZmQVUu_o?si=oU32s78GNY41N389"
           thumbnailSrc="/images/movies/arino.webp"
-          thumbnailAlt="シルバーネクストレンズ 紹介映像"
+          thumbnailAlt={videoContent.thumbnailAlt}
         />
       </div>
     </SectionWrapper>

@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import './globals.css';
+import { getFontClass } from '@/lib/fonts';
+import { metadata as siteMetadata } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'SILVER NEXT LENS',
-  description: '映像・写真制作のプロフェッショナル集団',
+  title: siteMetadata.title,
+  description: siteMetadata.description,
 };
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
-
-const getFontClass = () => `${inter.variable} m-0 p-0`;
 
 const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider

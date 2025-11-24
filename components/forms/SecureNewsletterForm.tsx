@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Send } from 'lucide-react';
+import { newsletter as newsletterContent } from '@/lib/content';
 
 interface SecureNewsletterFormProps {
   className?: string;
@@ -67,7 +68,7 @@ export default function SecureNewsletterForm({ className }: SecureNewsletterForm
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="メールアドレスを入力"
+                    placeholder={newsletterContent.placeholder}
                     className="pr-12 backdrop-blur-sm border-gray-300/50 bg-white/50 dark:bg-black/50"
                     autoComplete="email"
                     {...field}
@@ -84,17 +85,17 @@ export default function SecureNewsletterForm({ className }: SecureNewsletterForm
             className="absolute right-1 top-1 h-8 w-8 rounded-full bg-gray-800 text-white transition-transform hover:scale-105 disabled:opacity-50"
           >
             <Send className="h-4 w-4" />
-            <span className="sr-only">登録</span>
+            <span className="sr-only">{newsletterContent.submit}</span>
           </Button>
         </div>
         {submitStatus === 'success' && (
           <p className="mt-2 text-sm text-green-600 dark:text-green-400">
-            登録が完了しました
+            {newsletterContent.success}
           </p>
         )}
         {submitStatus === 'error' && (
           <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-            登録に失敗しました
+            {newsletterContent.error}
           </p>
         )}
       </form>

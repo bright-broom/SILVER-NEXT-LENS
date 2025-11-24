@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { COMPANY_INFO } from '@/lib/constants';
+import { contact as contactContent } from '@/lib/content';
 
 export default function SecureContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,9 +72,9 @@ export default function SecureContactForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>お問い合わせ</CardTitle>
+        <CardTitle>{contactContent.title}</CardTitle>
         <CardDescription>
-          お気軽にご相談ください。内容を確認後、ご連絡いたします。
+          {contactContent.description}。内容を確認後、ご連絡いたします。
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -84,10 +85,10 @@ export default function SecureContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>お名前 *</FormLabel>
+                  <FormLabel>{contactContent.form.name.label}</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="山田 太郎"
+                      placeholder={contactContent.form.name.placeholder}
                       {...field}
                       autoComplete="name"
                     />
@@ -102,11 +103,11 @@ export default function SecureContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>メールアドレス *</FormLabel>
+                  <FormLabel>{contactContent.form.email.label}</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="example@email.com"
+                      placeholder={contactContent.form.email.placeholder}
                       {...field}
                       autoComplete="email"
                     />
@@ -121,11 +122,11 @@ export default function SecureContactForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>電話番号</FormLabel>
+                  <FormLabel>{contactContent.form.phone.label}</FormLabel>
                   <FormControl>
                     <Input
                       type="tel"
-                      placeholder={COMPANY_INFO.phone}
+                      placeholder={contactContent.form.phone.placeholder}
                       {...field}
                       autoComplete="tel"
                     />
@@ -140,10 +141,10 @@ export default function SecureContactForm() {
               name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>件名 *</FormLabel>
+                  <FormLabel>{contactContent.form.subject.label}</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="お問い合わせの件名"
+                      placeholder={contactContent.form.subject.placeholder}
                       {...field}
                     />
                   </FormControl>
@@ -157,10 +158,10 @@ export default function SecureContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>メッセージ *</FormLabel>
+                  <FormLabel>{contactContent.form.message.label}</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="お問い合わせ内容をご記入ください"
+                      placeholder={contactContent.form.message.placeholder}
                       rows={6}
                       {...field}
                     />
@@ -172,18 +173,18 @@ export default function SecureContactForm() {
 
             {submitStatus === 'success' && (
               <div className="rounded-md bg-green-50 p-4 text-green-800 dark:bg-green-900/20 dark:text-green-400">
-                お問い合わせを受け付けました。ありがとうございます。
+                {contactContent.form.success}
               </div>
             )}
 
             {submitStatus === 'error' && (
               <div className="rounded-md bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-400">
-                送信に失敗しました。しばらくしてから再度お試しください。
+                {contactContent.form.error}
               </div>
             )}
 
             <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? '送信中...' : '送信する'}
+              {isSubmitting ? contactContent.form.submitting : contactContent.form.submit}
             </Button>
           </form>
         </Form>

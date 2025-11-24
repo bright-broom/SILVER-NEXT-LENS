@@ -28,7 +28,7 @@ const sections = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden m-0 p-0">
+    <main className="min-h-screen overflow-x-hidden antialiased">
       {sections.map((Section, index) => (
         <Section key={index} />
       ))}

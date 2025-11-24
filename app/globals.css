@@ -76,10 +76,31 @@
 
 @layer base {
   * {
-    @apply border-border m-0 p-0;
+    @apply border-border;
   }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    @apply bg-background text-foreground m-0 p-0;
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
@@ -92,6 +113,37 @@
   }
   .section-base {
     @apply relative w-full overflow-hidden;
+  }
+
+  /* コンテナの改善 */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+    max-width: 1280px;
+  }
+
+  /* セクション間のスペーシング */
+  .section-spacing {
+    @apply py-16 sm:py-20 md:py-24 lg:py-32;
+  }
+
+  /* レスポンシブタイポグラフィ */
+  .responsive-heading {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .responsive-text {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  /* グリッドレイアウトの改善 */
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* カードのホバーエフェクト */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 }
 

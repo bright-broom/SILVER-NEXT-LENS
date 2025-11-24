@@ -3,6 +3,7 @@
 import { ParallaxScrollSecond } from '@/components/ui/parallax-scroll';
 import SectionWrapper from './SectionWrapper';
 import SectionHeader from './SectionHeader';
+import { movies as moviesContent } from '@/lib/content';
 
 const images = [
   '/images/movies/movie1.webp',
@@ -23,8 +24,8 @@ export default function Movies() {
   return (
     <SectionWrapper>
       <SectionHeader
-        title="制作実績"
-        description="ドローン空撮・映像制作の作品集"
+        title={moviesContent.title}
+        description={moviesContent.description}
       />
 
       <ParallaxScrollSecond images={images} />

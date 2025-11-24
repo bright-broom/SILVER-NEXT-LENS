@@ -28,27 +28,29 @@ const clients: Client[] = [
   { name: 'パソナグループ', logo: '/images/logo/pasona.webp' },
 ];
 
+import { clients as clientsContent } from '@/lib/content';
+
 export default function Clients() {
   return (
     <SectionWrapper>
       <SectionHeader
-        title="主要取引先"
-        description="多くの企業・団体様にご信頼いただいています"
+        title={clientsContent.title}
+        description={clientsContent.description}
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
         {clients.map((client, index) => (
           <AnimatedCard
             key={index}
             delay={index * 0.05}
-            className="flex items-center justify-center p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow transform hover:scale-105 bg-white/50 dark:bg-black/50"
+            className="flex items-center justify-center p-4 md:p-6 rounded-lg shadow-sm card-hover bg-white/50 dark:bg-black/50"
           >
             <Image
               src={client.logo}
               alt={client.name}
               width={120}
               height={60}
-              className="object-contain"
+              className="object-contain w-full h-auto max-w-[120px]"
             />
           </AnimatedCard>
         ))}

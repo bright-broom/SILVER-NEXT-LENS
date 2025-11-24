@@ -21,9 +21,9 @@ const gradientClasses = {
 
 const paddingClasses = {
   'none': '',
-  'sm': 'py-12',
-  'md': 'py-24',
-  'lg': 'py-32',
+  'sm': 'py-12 sm:py-16',
+  'md': 'py-16 sm:py-20 md:py-24',
+  'lg': 'py-20 sm:py-24 md:py-32 lg:py-40',
 };
 
 const defaultVariants: Variants = {
@@ -48,11 +48,11 @@ export default function SectionWrapper({
         className
       )}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, delay: animationDelay }}
           variants={defaultVariants}
           className={cn(contentClassName)}
