@@ -23,7 +23,6 @@ const nextConfig = {
   },
   experimental: {
     appDocumentPreloading: true,
-    optimizeCss: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
